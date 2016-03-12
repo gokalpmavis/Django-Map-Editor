@@ -1,0 +1,28 @@
+{% block content %}
+<html>
+
+<body>
+
+<div id="map_info">
+
+{% if map_info %}
+	{% for line in map_info %}
+		<p> {{line}} </p>
+	{% endfor %}
+{% endif %}
+
+</div>
+<form method="post" action="/select_map">
+{% csrf_token %}
+<input type="submit" name="BACK" value="BACK"/>
+</form>
+
+
+<form method="post" action="/Editor">
+{% csrf_token %}
+<input type="submit" name="NEXT" value="NEXT"/>
+</form>
+
+</body>
+</html>
+{% endblock %}
